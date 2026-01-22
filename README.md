@@ -5,7 +5,7 @@ This project is designed to demonstrate how machine learning models can be integ
 
 The application provides a clean and user-friendly interface where users can navigate between different pages, recognize digits, view recognition history, and learn more about the project.
 
----
+Live Demo: https://hafiza-sadia.github.io/ai-digit-recognizer/
 
 📌 Project Objectives
 
