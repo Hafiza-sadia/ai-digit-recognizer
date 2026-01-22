@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Digit Recognizer</title>
+
+    <style>
+        /* ================= Page Background ================= */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .recognize-bg {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: url('recognize-bg.jpg') no-repeat center/cover;
+        }
+
+        .recognize-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: inherit;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* ================= Content Container ================= */
+        .recognize-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        /* ================= Heading ================= */
+        .recognize-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* ================= Canvas ================= */
+        #canvas {
+            border: 5px solid #4c6fff;
+            cursor: crosshair;
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 20px rgba(76, 111, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        /* ================= Buttons ================= */
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-secondary { background-color: #4c6fff; }
+        .btn-secondary:hover { background-color: #3751c8; }
+
+        .btn-primary { background-color: #38bdf8; color: #0d1117; }
+        .btn-primary:hover { background-color: #0fa4d9; }
+
+        /* ================= Result Box ================= */
+        #resultContainer {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #resultDisplay {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4c6fff;
+            background-color: rgba(255,255,255,0.1);
+            border: 3px solid #4c6fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        #statusMessage {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        /* ================= Error Message ================= */
+        #errorMessage {
+            color: #ff4c4c;
+            background: rgba(255,76,76,0.1);
+            border: 1px solid #ff4c4c;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recognize-bg">
+        <div class="recognize-content">
+            <!-- Page Heading -->
+            <h1>Draw a Digit (0-9)</h1>
+
+            <!-- Canvas -->
+            <canvas id="canvas" width="300" height="300"></canvas>
+
+            <!-- Buttons -->
+            <div>
+                <a href="#" class="btn btn-secondary" id="predictButton">Recognize</a>
+                <a href="#" class="btn btn-primary" id="clearButton">Clear</a>
+                <a href="home.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+
+            <!-- Result Box -->
+            <div id="resultContainer">
+                <div id="resultDisplay">?</div>
+                <p id="statusMessage">Awaiting input...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage"></div>
+        </div>
+    </div>
+
+    <script type="module" src="recognize.js"></script>
+</body>
+</html>

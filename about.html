@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AI Digit Recognizer</title>
+
+    <style>
+        /* ================= Body & Fonts ================= */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= Background & Overlay ================= */
+        .about-bg {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: url('about.jpg') no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .about-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: inherit;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* ================= Glassmorphism Content ================= */
+        .about-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .about-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        /* ================= Buttons ================= */
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4c6fff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3751c8;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 95%;
+            background: rgba(0,0,0,0.4);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 3;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        nav a.active {
+            color: #38bdf8;
+        }
+
+        /* ================= Fade-in Animation ================= */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div>AI Digit Recognizer</div>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="recognize.html">Recognize</a>
+            <a href="history.html">History</a>
+            <a href="about.html" class="active">About</a>
+        </div>
+    </nav>
+
+    <!-- Background & Overlay -->
+    <div class="about-bg">
+        <div class="about-content fade-in">
+            <h1>About AI Digit Recognizer</h1>
+
+            <!-- Project Description -->
+            <p>
+                AI Digit Recognizer is an interactive tool that uses "Convolutional Neural Networks (CNNs)" to identify handwritten digits in real-time.
+                Users can draw digits (0-9) on the canvas, and the AI predicts the digit accurately using trained models.
+            </p>
+
+            <p>
+                This project demonstrates how machine learning and AI can be applied to real-world problems. It provides a user-friendly interface for both beginners and advanced users to experiment with digit recognition.
+            </p>
+
+            <!-- Short Theory Section -->
+            <h2 style="color:#38bdf8; margin-top:20px;">How it Works</h2>
+            <p>
+                The system uses a trained CNN model to analyze the drawn digit. The image from the canvas is preprocessed (resized, normalized) and passed through multiple convolutional layers to extract features. 
+                The model then classifies the input as one of the digits from 0 to 9. This workflow is a practical example of "supervised learning"
+                 in AI.
+            </p>
+
+            <a href="home.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

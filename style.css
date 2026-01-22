@@ -1,0 +1,174 @@
+/* ===== Global Styles ===== */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Overlay for all background images ===== */
+.overlay {
+    background: rgba(0,0,0,0.55);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ===== Navigation Bar ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #4c6fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Common Buttons ===== */
+.btn {
+    padding: 12px 25px;
+    background: #4c6fff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #3a50cc;
+    transform: translateY(-3px);
+}
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Content for Pages ===== */
+.welcome-content,
+.home-content,
+.recognize-content,
+.history-content,
+.about-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* ===== Headings ===== */
+.welcome-content h1,
+.home-content h1,
+.recognize-content h1,
+.history-content h1,
+.about-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* ===== Paragraphs ===== */
+.welcome-content p,
+.home-content p,
+.about-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* ===== Home Page Buttons Group ===== */
+.home-content .buttons {
+    margin-top: 20px;
+}
+
+/* ===== Recognize Page Canvas ===== */
+canvas {
+    background: white;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: crosshair;
+}
+
+/* ===== History Table ===== */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background: rgba(255,255,255,0.9);
+    color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+th, td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background: #4c6fff;
+    color: white;
+}
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* ===== Background Divs Full Screen ===== */
+.welcome-bg,
+.home-bg,
+.recognize-bg,
+.history-bg,
+.about-bg {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* ===== Responsive Styling ===== */
+@media screen and (max-width: 768px) {
+    .welcome-content h1,
+    .home-content h1,
+    .recognize-content h1,
+    .history-content h1,
+    .about-content h1 {
+        font-size: 32px;
+    }
+
+    .welcome-content p,
+    .home-content p,
+    .about-content p {
+        font-size: 16px;
+    }
+
+    table {
+        width: 95%;
+    }
+
+    canvas {
+        width: 90%;
+        height: auto;
+    }
+}

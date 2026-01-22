@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | AI Digit Recognizer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main background container */
+        .home-bg {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Blurred background image */
+        .home-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url('home.jpg') no-repeat center / cover;
+            filter: blur(6px);
+            z-index: 0;
+            transform: scale(1.05); /* blur edges fix */
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        /* Content */
+        .home-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            margin: 8px;
+            background: #4c6fff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3a50cc;
+            transform: translateY(-3px);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="home-bg">
+    <div class="overlay"></div>
+
+    <div class="home-content">
+        <h1>AI Digit Recognizer</h1>
+        <p>Recognize handwritten digits easily and efficiently.</p>
+
+        <div>
+            <a href="recognize.html" class="btn">Recognize Digit</a>
+            <a href="history.html" class="btn">History</a>
+            <a href="about.html" class="btn">About Us</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | AI Digit Recognizer</title>
+
+    <style>
+        /* ================= Body & Fonts ================= */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= Background & Overlay ================= */
+        .history-bg {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: url('history.jpg') no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .history-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: inherit;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* ================= Glassmorphism Content ================= */
+        .history-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px 30px;
+            border-radius: 15px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            margin-top: 80px; /* To leave space for fixed page header */
+        }
+
+        .history-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #38bdf8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* ================= Table Styling ================= */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4c6fff;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.05);
+        }
+
+        tr:hover {
+            background: rgba(76, 111, 255, 0.2);
+        }
+
+        /* ================= Buttons ================= */
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4c6fff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3751c8;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 95%;
+            background: rgba(0,0,0,0.4);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 3;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        nav a.active {
+            color: #38bdf8;
+        }
+
+        /* ================= Page Header ================= */
+        .page-header {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            text-align: center;
+            color: #38bdf8;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* ================= Fade-in Animation ================= */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div>AI Digit Recognizer</div>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="recognize.html">Recognize</a>
+            <a href="history.html" class="active">History</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">Recognition History</div>
+
+    <!-- Background & Overlay -->
+    <div class="history-bg">
+        <div class="history-content fade-in">
+            <!-- Optional h1 inside content can be removed to avoid repetition -->
+            <!-- <h1>Recognition History</h1> -->
+
+            <!-- History Table -->
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Digit Drawn</th>
+                    <th>Prediction</th>
+                </tr>
+                <tr>
+                    <td>2025-11-24</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2025-11-23</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <!-- More rows can be dynamically added -->
+            </table>
+
+            <!-- Button -->
+            <a href="recognize.html" class="btn">Draw New Digit</a>
+        </div>
+    </div>
+
+</body>
+</html>
